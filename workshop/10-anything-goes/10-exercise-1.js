@@ -11,7 +11,9 @@
 // characters there are in the string.
 
 function countBs(str) {
-
+  let times = 0;
+  [...str].forEach(element => element === "B" ? times++ : "");
+  return times
 }
 // -------------------------------------------------------------------------
 console.log('Q1: ', countBs('BananaBabyBubbles'));

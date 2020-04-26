@@ -9,10 +9,10 @@
  */
 
 // Q8
-// Returns true if every element of lst is of length at least 5.
+// Returns true if every element of list is of length at least 5.
 // Otherwise returns false.
-function allLong(lst) {
-  // lst is an array of strings
+function allLong(list) {
+  return list.every(element => element.length >= 5)
 }
 
 console.log('Q8 - case 1', allLong(['Scott', 'Bob', 'Ric', 'Jim']));

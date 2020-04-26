@@ -4,8 +4,19 @@
 
 // Hint: consider using .filter(), .indexOf() and .lastIndexOf()
 
-function filterNonUnique(array) {
-
+const reducerToObject = (accumulator, data) => {
+  !accumulator[data] ?
+    accumulator[data] = 1
+    : accumulator[data]++;
+  return accumulator;
 }
 
-console.log(filterNonUnique([1,2,3,3,4,5,6,7,7,8]));
+function filterNonUnique(array) {
+  const objectArrayCount = array.reduce(reducerToObject, {})
+  // console.table(objectArrayCount)
+  return Object.keys(objectArrayCount).filter((a) => objectArrayCount[a] > 1)
+}
+
+
+console.table(filterNonUnique([1, 2, 3, 3, 4, 5, 6, 7, 7, 8]));
+ // Good saves Web Bos Vanilla JavaScript 30 days exercises

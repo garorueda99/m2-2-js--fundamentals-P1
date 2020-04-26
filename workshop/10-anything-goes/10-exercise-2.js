@@ -11,9 +11,11 @@
 // Rewrite countBs to make use of this new function.
 
 function countChar(str, char) {
-
-
+  let times = 0;
+  [...str].forEach(element => element === char ? times++ : "");
+  return times
 }
+
 // -------------------------------------------------------------------------
 console.log('Q2: ', countChar('BananaBabyBubbles', 'u'));
 console.log('Q2: ', countChar('BananaBabyBubbles', 'a'));

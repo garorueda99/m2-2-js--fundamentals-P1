@@ -50,7 +50,8 @@ console.log(`A1) Morty has ${numberOfNames} names`);
 // Q2
 // Convert the alternateRicks string to an array, so that each name ("Simple
 // Rick") is an element in that array. Log that array to the console.
-
+const alternateRickArray = alternateRicks.split(", ")
+console.table(alternateRickArray);
 //
 //
 //
@@ -58,14 +59,14 @@ console.log(`A1) Morty has ${numberOfNames} names`);
 // Q3
 // How many Ricks have been named in alternateRicks?
 // HINT: There are multiple ways to solve this one. Maybe try a `for` loop!
-
+console.log(`It has been named ${alternateRickArray.length} Ricks in alternateRicks`);
 //
 //
 //
 //
 // Q4
 // How many characters are there in rickSaying (without spaces)?
-
+console.log(`there are ${rickSaying.split(" ").join("").length} characters in rickSaying (without spaces)`);
 //
 //
 //
@@ -73,13 +74,15 @@ console.log(`A1) Morty has ${numberOfNames} names`);
 // Q5
 // It turns out, Morty doesn't actually have a middle name. The `grandson`
 // string is wrong! Console Morty's name without "Antoine".
-
+const grandsonRight = grandson.split(" ").filter((partName) => partName !== "Antoine").join(" ");
+console.log(grandsonRight);
 //
 //
 //
 //
 // Q6
 // Scary Terry is actually not an enemy. Remove him from the list and console only Rick's true enemies.
+console.log("The new enemy list is:", enemies.replace("Scary Terry, ", ""));
 
 //
 //
@@ -94,3 +97,11 @@ console.log(`A1) Morty has ${numberOfNames} names`);
 //   IF secret was `bluehired`
 //   AND notCode was `['blue', 'red']`
 //   THEN the answer would be `hi` (bluehired without blue and red).
+secretDecoded = secret;
+notCode.forEach((removeWord, array = []) => {
+  console.log(removeWord);
+  secretDecoded = secretDecoded.replace(removeWord, "");
+})
+
+console.log("The secret is ", secretDecoded)
+

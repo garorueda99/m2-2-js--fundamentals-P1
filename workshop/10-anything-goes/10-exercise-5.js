@@ -12,7 +12,12 @@
 // = 371
 
 let armstrongNumbers = [];
+const reducer = (accumulator, currentValue, index, array) => (accumulator + Math.pow(currentValue, array.length));
 
 // write your loop here...
+for (let i = 0; i <= 999; i++) {
+  let arrayNumber = String(i).split("").map(number => parseInt(number));
+  arrayNumber.reduce(reducer, 0) === i ? armstrongNumbers.push(i) : ""
+}
 
 console.log(armstrongNumbers);

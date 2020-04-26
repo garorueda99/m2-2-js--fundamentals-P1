@@ -11,8 +11,9 @@
 // Q5
 // Returns a new list with all the elements of lst that are length
 // greater than 5
-function keepLong(lst) {
-  // lst is an array of strings
+function keepLong(list) {
+  // list is an array of strings
+  return list.filter(word => word.length > 5)
 }
 
 console.log(
